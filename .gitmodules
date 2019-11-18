@@ -1,0 +1,4 @@
+[submodule "www"]
+	path = www
+	url = https://github.com/GrandComicsDatabase/gcd-django.git
+	branch = beta

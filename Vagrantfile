@@ -12,8 +12,11 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "1.0.282"
   config.vm.network :forwarded_port, guest:8000, host:8000, host_ip: "127.0.0.1"
 
-  config.vm.provision "shell", path: "provision-os.sh"
-  config.vm.provision "shell", path: "provision-python.sh"
-  config.vm.provision "shell", path: "provision-db.sh"
-  config.vm.provision "shell", path: "provision-gcd.sh", privileged: "false"
+  config.vm.provision "shell", path: "scripts/provision-os.sh"
+  config.vm.provision "shell", path: "scripts/provision-python.sh"
+  config.vm.provision "shell", path: "scripts/provision-db.sh"
+  config.vm.provision "shell",
+    path: "scripts/provision-gcd.sh", privileged: "false"
+  config.vm.provision "shell",
+    path: "scripts/provision-user.sh", privileged: "false"
 end

@@ -12,6 +12,8 @@ CACHES = {
     }
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 EOD
 
@@ -19,7 +21,7 @@ source /opt/venv/bin/activate && \
 cd /vagrant/www && \
 mkdir -p \
     media/dumps \
-    media/img/gcd/new_covers \
+    media/img/gcd/new_covers\tmp \
     media/img/gcd/covers_by_id \
     media/img/gcd/covers_old_id_scheme \
     media/img/gcd/new_generic_images \

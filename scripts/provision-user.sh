@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "creating .vimrc..."
 cat > /home/vagrant/.vimrc <<EOD
 set noeol
 set nu
@@ -13,6 +14,7 @@ au BufRead,BufNewFile *.html set filetype=htmldjango
 au BufRead,BufNewFile *.sql set filetype=mysql
 EOD
 
+echo "creating .bash_profile..."
 cat > /home/vagrant/.bash_profile <<EOD
 source /home/vagrant/.profile
 
@@ -31,3 +33,4 @@ alias gp='git pull --prune'
 
 source /opt/venv/bin/activate
 EOD
+echo "...user configuration complete."

@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-mysql -uroot < /vagrant/sql/init.sql
+echo "Creating gcdonline database..."
+mysql -uroot < /vagrant/sql/init.sql && \
+echo "...database created."

@@ -14,9 +14,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "scripts/provision-os.sh"
   config.vm.provision "shell", path: "scripts/provision-python.sh"
+  config.vm.provision "shell",
+    path: "scripts/provision-user.sh", privileged: "false"
   config.vm.provision "shell", path: "scripts/provision-db.sh"
   config.vm.provision "shell",
     path: "scripts/provision-gcd.sh", privileged: "false"
-  config.vm.provision "shell",
-    path: "scripts/provision-user.sh", privileged: "false"
 end
